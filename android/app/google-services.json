@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "54565024833",
+    "project_id": "ra-ap-ab0ca",
+    "storage_bucket": "ra-ap-ab0ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54565024833:android:cbf0c8269a8a8d5ef742c0",
+        "android_client_info": {
+          "package_name": "com.rapid.rapid_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGD24RPl3PyRZNzy1SSOalTUO6HlHGuhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

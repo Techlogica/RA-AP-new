@@ -1,0 +1,219 @@
+name: rapid_app
+description: Rapid App
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.1
+
+environment:
+  sdk: ">=2.17.0-69.2.beta <3.0.0"
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.4
+  # getX
+  get: ^4.6.1
+  # Connectivity
+  connectivity_plus: ^2.2.0
+  # storage
+  get_storage: ^2.0.3
+  #charts
+  charts_flutter: ^0.12.0
+  #Hive database
+  hive: ^2.0.5
+  hive_flutter: ^1.1.0
+  #font awesome icons
+  font_awesome_flutter: ^9.2.0
+  #DataGrid (DataTable) library
+  syncfusion_flutter_datagrid: ^20.1.57
+  #Charts library
+  syncfusion_flutter_charts: ^20.1.57
+  #calendar
+  syncfusion_flutter_calendar: ^20.1.57
+  #DatePicker
+  syncfusion_flutter_datepicker: ^20.1.57
+  #Export Flutter DataGrid to PDF and excel
+  syncfusion_flutter_datagrid_export: ^20.1.57-beta
+  #open_file
+  open_file: ^3.2.1
+  #slidable list item
+  flutter_slidable: ^3.1.0
+  # convert number format
+  intl: ^0.17.0
+  # port of .NET's LINQ IEnumerable functions to Dart
+  darq: ^1.1.1
+  # breadcrumbs
+  flutter_breadcrumb: ^1.0.1
+  #ScreenShort
+  screenshot: ^2.1.0
+  #share_plus:
+  share_plus: ^4.0.10
+  #path_provider:
+  path_provider: ^2.0.8
+  #math expressions
+  math_expressions: ^2.3.1
+  equations: ^4.0.0
+  stack: ^0.2.1
+  #file and image picker
+  file_picker: ^4.5.1
+  image_picker: ^1.0.7
+  #map
+  google_maps_flutter: ^2.1.6
+  #location
+  geolocator: ^9.0.2
+  #auto complete text
+  flutter_typeahead: ^3.2.7
+  # show svg images
+  flutter_svg: ^1.0.0
+  # side drawer
+  folding_cell: ^1.0.2
+  flutter_advanced_drawer: ^1.3.2
+  # bottom navigation bar
+  curved_navigation_bar: ^1.0.3
+  # floating button
+  hawk_fab_menu: ^1.1.2
+  #animations
+  animated_text_kit: ^4.2.2
+  #color picker
+  flutter_colorpicker: ^1.0.3
+  #floating button
+  fab_circular_menu: ^1.0.2
+  # validation
+  validators: ^3.0.0
+  # open url
+  url_launcher: ^6.1.7
+  # switch button
+  lite_rolling_switch: ^1.0.0
+  # get device token
+#    firebase_messaging: ^14.1.0
+
+  # bar code and qr code scanner_overlay
+  qr_code_scanner: ^1.0.1
+
+  #camera permission
+  permission_handler: ^10.2.0
+  collection: ^1.15.0
+  #flutter_local_notifications: ^16.3.1+1
+  flutter_local_notifications:
+  #timezone
+  timezone:
+  #sharedpreference
+  shared_preferences: ^2.2.2
+  rxdart: ^0.27.7
+
+#chat
+  flutter_chat_ui: ^1.6.12
+
+#local auth for biometric authentication
+  local_auth: ^2.1.8
+
+#firebase and crashlytics
+  firebase_crashlytics: ^3.4.18
+  firebase_core: ^2.7.0
+
+  #device info
+  device_info_plus:
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  #  hive database generator
+  hive_generator: ^1.1.2
+  build_runner: ^2.1.7
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^1.0.0
+  #setting flutter launcher app name
+  flutter_app_name: ^0.1.1
+  #setting flutter launcher icon
+  flutter_launcher_icons: ^0.9.2
+  jiffy: ^5.0.0
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter_app_name:
+  name: "RA-AP"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/rapid_logo.png"
+
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/themes/
+    - assets/icons/
+    - assets/shapes/
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Black.ttf
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/Roboto-Thin.ttf
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
