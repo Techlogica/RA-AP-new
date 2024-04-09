@@ -17,144 +17,142 @@ class UrlConnectionPage extends GetView<ConnectionController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          color: Theme.of(context).backgroundColor,
-          // decoration: const BoxDecoration(
-          //     gradient: LinearGradient(colors: [
-          //       Color.fromRGBO(0, 218, 179, 100),
-          //       Color.fromRGBO(5, 0, 255, 100),
-          //     ], begin: Alignment.topLeft, end: Alignment.centerRight)),
-          child: Column(
-            children: [
-              TextButton(
-                onPressed: () {
-                  FirebaseCrashlytics.instance.crash();
-                },
-                child: const Text("Throw Test Exception"),
-              ),
-              Expanded(
-                  flex: 1,
+    return Scaffold(
+      body: Container(
+        color: Theme.of(context).backgroundColor,
+        // decoration: const BoxDecoration(
+        //     gradient: LinearGradient(colors: [
+        //       Color.fromRGBO(0, 218, 179, 100),
+        //       Color.fromRGBO(5, 0, 255, 100),
+        //     ], begin: Alignment.topLeft, end: Alignment.centerRight)),
+        child: Column(
+          children: [
+            /*TextButton(
+              onPressed: () {
+                FirebaseCrashlytics.instance.crash();
+              },
+              child: const Text("Throw Test Exception"),
+            ),*/
+            Expanded(
+                flex: 1,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: const Text(
+                    'PROJECTS',
+                    style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                )),
+            Expanded(
+                flex: 2,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: controller.isLightMode
+                          ? Colors.white30
+                          : Colors.black38,
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(15.0),
+                          topRight: Radius.circular(15.0))),
                   child: Container(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      'PROJECTS',
-                      style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  )),
-              Expanded(
-                  flex: 2,
-                  child: Container(
+                    margin: const EdgeInsets.only(top: 25.0),
                     decoration: BoxDecoration(
                         color: controller.isLightMode
-                            ? Colors.white30
-                            : Colors.black38,
+                            ? Colors.white54
+                            : Colors.black54,
                         borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(15.0),
                             topRight: Radius.circular(15.0))),
                     child: Container(
                       margin: const EdgeInsets.only(top: 25.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 12.0),
                       decoration: BoxDecoration(
                           color: controller.isLightMode
-                              ? Colors.white54
-                              : Colors.black54,
+                              ? Colors.white
+                              : Colors.black,
                           borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(15.0),
                               topRight: Radius.circular(15.0))),
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 25.0),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 12.0),
-                        decoration: BoxDecoration(
-                            color: controller.isLightMode
-                                ? Colors.white
-                                : Colors.black,
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(15.0),
-                                topRight: Radius.circular(15.0))),
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 40.0),
-                          child: Obx(
-                            () => ListView.builder(
-                              itemCount: controller.savedProjects.length,
-                              itemBuilder: (context, index) {
-                                return Slidable(
-                                  key: const ValueKey(0),
-                                  enabled: true,
-                                  startActionPane: ActionPane(
-                                    extentRatio: 0.20,
-                                    dragDismissible: false,
-                                    motion: const DrawerMotion(),
-                                    dismissible:
-                                        DismissiblePane(onDismissed: () {}),
-                                    children: [
-                                      SlidableAction(
-                                        onPressed: (BuildContext context) =>
-                                            _onTapListView(
-                                                controller.savedProjects[index],
-                                                'delete',
-                                                index),
-                                        backgroundColor: Colors.transparent,
-                                        foregroundColor:
-                                            Theme.of(context).backgroundColor,
-                                        icon: Icons.delete,
-                                      )
-                                    ],
-                                  ),
-                                  endActionPane: ActionPane(
-                                    extentRatio: 0.20,
-                                    dragDismissible: false,
-                                    motion: const ScrollMotion(),
-                                    children: [
-                                      SlidableAction(
-                                        onPressed: (BuildContext context) =>
-                                            _onTapListView(
-                                                controller.savedProjects[index],
-                                                'add',
-                                                index),
-                                        backgroundColor: Colors.transparent,
-                                        foregroundColor:
-                                            Theme.of(context).backgroundColor,
-                                        icon: Icons.arrow_forward,
-                                      ),
-                                    ],
-                                  ),
-                                  child: ListTileWidget(
-                                    response: controller.savedProjects[index],
-                                    onTap: () {
-                                      _openProjectAlertBox(
-                                        projectName: controller
-                                            .savedProjects[index].projectName,
-                                        projectUrl: controller
-                                            .savedProjects[index].projectUrl,
-                                        index: index,
-                                      );
-                                    },
-                                  ),
-                                );
-                              },
-                            ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 40.0),
+                        child: Obx(
+                          () => ListView.builder(
+                            itemCount: controller.savedProjects.length,
+                            itemBuilder: (context, index) {
+                              return Slidable(
+                                key: const ValueKey(0),
+                                enabled: true,
+                                startActionPane: ActionPane(
+                                  extentRatio: 0.20,
+                                  dragDismissible: false,
+                                  motion: const DrawerMotion(),
+                                  dismissible:
+                                      DismissiblePane(onDismissed: () {}),
+                                  children: [
+                                    SlidableAction(
+                                      onPressed: (BuildContext context) =>
+                                          _onTapListView(
+                                              controller.savedProjects[index],
+                                              'delete',
+                                              index),
+                                      backgroundColor: Colors.transparent,
+                                      foregroundColor:
+                                          Theme.of(context).backgroundColor,
+                                      icon: Icons.delete,
+                                    )
+                                  ],
+                                ),
+                                endActionPane: ActionPane(
+                                  extentRatio: 0.20,
+                                  dragDismissible: false,
+                                  motion: const ScrollMotion(),
+                                  children: [
+                                    SlidableAction(
+                                      onPressed: (BuildContext context) =>
+                                          _onTapListView(
+                                              controller.savedProjects[index],
+                                              'add',
+                                              index),
+                                      backgroundColor: Colors.transparent,
+                                      foregroundColor:
+                                          Theme.of(context).backgroundColor,
+                                      icon: Icons.arrow_forward,
+                                    ),
+                                  ],
+                                ),
+                                child: ListTileWidget(
+                                  response: controller.savedProjects[index],
+                                  onTap: () {
+                                    _openProjectAlertBox(
+                                      projectName: controller
+                                          .savedProjects[index].projectName,
+                                      projectUrl: controller
+                                          .savedProjects[index].projectUrl,
+                                      index: index,
+                                    );
+                                  },
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
                     ),
-                  ))
-            ],
-          ),
+                  ),
+                ))
+          ],
         ),
-        floatingActionButton: FloatingActionButton(
-            backgroundColor: Theme.of(context).backgroundColor,
-            child: Icon(
-              Icons.add,
-              color: Theme.of(context).primaryColor,
-              size: 30,
-            ),
-            onPressed: () => _onPressedFloatingButton()),
       ),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Theme.of(context).backgroundColor,
+          child: Icon(
+            Icons.add,
+            color: Theme.of(context).primaryColor,
+            size: 30,
+          ),
+          onPressed: () => _onPressedFloatingButton()),
     );
   }
 
