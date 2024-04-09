@@ -1,4 +1,4 @@
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -14,7 +14,7 @@ class MenuBottomBarWidget extends StatefulWidget {
 
   final Function onItemTap;
   final String isInsert;
-  final GlobalKey<FabCircularMenuState> fabKey;
+  final GlobalKey<FabCircularMenuPlusState> fabKey;
 
   @override
   State<MenuBottomBarWidget> createState() => _MenuBottomBarWidgetState();
@@ -59,7 +59,7 @@ class _MenuBottomBarWidgetState extends State<MenuBottomBarWidget> {
             FontAwesomeIcons.fileExcel,
             FontAwesomeIcons.filePdf,
           ];
-    return FabCircularMenu(
+    return FabCircularMenuPlus(
         key: widget.fabKey,
         fabSize: 50,
         fabOpenIcon: Icon(
@@ -79,7 +79,8 @@ class _MenuBottomBarWidgetState extends State<MenuBottomBarWidget> {
               icon: Icon(
                 bottomIcons[i],
                 size: 35,
-                color: Theme.of(context).primaryColor,),
+                color: Theme.of(context).primaryColor,
+              ),
               onPressed: () => widget.onItemTap(i),
             ),
         ]);

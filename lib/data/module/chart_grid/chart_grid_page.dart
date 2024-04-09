@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rapid_app/data/module/chart_grid/chart_grid_controller.dart';
@@ -13,13 +14,14 @@ import 'package:screenshot/screenshot.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import 'package:syncfusion_flutter_datagrid_export/export.dart';
-import 'package:syncfusion_flutter_xlsio/xlsio.dart' hide Alignment, Column, Row, Border;
+import 'package:syncfusion_flutter_xlsio/xlsio.dart'
+    hide Alignment, Column, Row, Border;
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 
 class ChartGridPage extends GetView<ChartGridController> {
-   ChartGridPage({Key? key}) : super(key: key);
+  ChartGridPage({Key? key}) : super(key: key);
 
-  final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
+  final GlobalKey<FabCircularMenuPlusState> fabKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class ChartGridPage extends GetView<ChartGridController> {
   _onItemTap(int onTapIndex) {
     if (fabKey.currentState!.isOpen) {
       fabKey.currentState!.close();
-    }  else {
+    } else {
       fabKey.currentState!.open();
     }
     switch (onTapIndex) {
@@ -129,7 +131,6 @@ class _BodyWidget extends GetView<ChartGridController> {
           () {
             if (controller.chartGridData.isEmpty &&
                 controller.isIndicatorVisibility.value) {
-
               return SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -142,7 +143,7 @@ class _BodyWidget extends GetView<ChartGridController> {
             } else {
               return SfDataGridTheme(
                 data: SfDataGridThemeData(
-                headerColor: Theme.of(Get.context!).backgroundColor),
+                    headerColor: Theme.of(Get.context!).backgroundColor),
                 child: SfDataGrid(
                   key: controller.keyExport,
                   columnWidthMode: ColumnWidthMode.auto,
@@ -150,7 +151,7 @@ class _BodyWidget extends GetView<ChartGridController> {
                   headerGridLinesVisibility: GridLinesVisibility.both,
                   columns: _getColumns(),
                   source: ListChartDataGridSource(
-                  gridData: controller.chartGridData,
+                    gridData: controller.chartGridData,
                   ),
                 ),
               );

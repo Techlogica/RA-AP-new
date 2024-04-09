@@ -1,4 +1,4 @@
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
@@ -28,7 +28,7 @@ class MenuDetailedPage extends GetView<MenuDetailedController> {
   // key for side navigation
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
   final _advancedDrawerController = AdvancedDrawerController();
-  final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
+  final GlobalKey<FabCircularMenuPlusState> fabKey = GlobalKey();
 
   @override
   final String? tag = '${Get.arguments["MDT_SYS_ID"]}';
@@ -54,7 +54,7 @@ class MenuDetailedPage extends GetView<MenuDetailedController> {
       body: const _BodyWidget(),
       floatingActionButton: MenuBottomBarWidget(
         fabKey: fabKey,
-        isInsert: controller.argumentData?['INSERT']??'',
+        isInsert: controller.argumentData?['INSERT'] ?? '',
         onItemTap: _onItemTap,
       ),
     );
@@ -330,8 +330,10 @@ class _BodyWidget extends GetView<MenuDetailedController> {
                   flex: 1,
                   child: SfDataGridTheme(
                     data: SfDataGridThemeData(
-                        headerColor: Theme.of(Get.context!).colorScheme.background,
-                        rowHoverTextStyle: Theme.of(context).textTheme.displayLarge),
+                        headerColor:
+                            Theme.of(Get.context!).colorScheme.background,
+                        rowHoverTextStyle:
+                            Theme.of(context).textTheme.displayLarge),
                     child: SfDataGrid(
                       key: controller.keyExport,
                       gridLinesVisibility: GridLinesVisibility.both,
@@ -386,7 +388,8 @@ class _BodyWidget extends GetView<MenuDetailedController> {
                               GestureDetector(
                                 child: Container(
                                   width: 60.0,
-                                  color: Theme.of(context).colorScheme.background,
+                                  color:
+                                      Theme.of(context).colorScheme.background,
                                   child: Center(
                                     child: Icon(
                                       Icons.edit,

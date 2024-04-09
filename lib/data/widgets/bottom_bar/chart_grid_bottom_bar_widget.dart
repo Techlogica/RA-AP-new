@@ -1,4 +1,4 @@
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -12,7 +12,7 @@ class ChartGridBottomBarWidget extends StatefulWidget {
   }) : super(key: key);
 
   final Function onItemTap;
-  final GlobalKey<FabCircularMenuState> fabKey;
+  final GlobalKey<FabCircularMenuPlusState> fabKey;
 
   @override
   State<ChartGridBottomBarWidget> createState() =>
@@ -36,7 +36,7 @@ class _ChartGridBottomBarWidgetState extends State<ChartGridBottomBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return FabCircularMenu(
+    return FabCircularMenuPlus(
         key: widget.fabKey,
         fabSize: 50,
         fabOpenIcon: Icon(

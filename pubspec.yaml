@@ -100,7 +100,8 @@ dependencies:
   #color picker
   flutter_colorpicker: ^1.0.3
   #floating button
-  fab_circular_menu: ^1.0.2
+#  fab_circular_menu: ^1.0.2
+  fab_circular_menu_plus: ^0.0.2
   # validation
   validators: ^3.0.0
   # open url
